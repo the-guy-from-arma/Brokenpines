@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Broken Pines official site. Country heart, hip-hop soul, original releases, music player, and Spotify links."
+    />
+    <meta property="og:title" content="Broken Pines" />
+    <meta
+      property="og:description"
+      content="Country heart. Hip-hop soul. Listen to Broken Pines and stream the releases."
+    />
+    <meta property="og:image" content="/assets/covers/they-cant-own-this-life.png" />
+    <meta property="og:type" content="website" />
+    <title>Broken Pines | Official</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="/assets/covers/they-cant-own-this-life.png" as="image" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand-mark" href="#home" aria-label="Broken Pines home">
+        <span class="brand-mark__trees" aria-hidden="true">BP</span>
+        <span>Broken Pines</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#music">Music</a>
+        <a href="#releases">Releases</a>
+        <a href="#story">Story</a>
+      </nav>
+      <a class="spotify-link" data-spotify-link href="#" rel="noopener" target="_blank">
+        <span class="spotify-link__dot" aria-hidden="true"></span>
+        Spotify
+      </a>
+    </header>
+
+    <main>
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <img
+          class="hero__image"
+          data-hero-image
+          src="/assets/covers/they-cant-own-this-life.png"
+          alt=""
+        />
+        <div class="hero__shade" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p class="eyebrow">Country heart. Hip-hop soul.</p>
+          <h1 id="hero-title">Broken Pines</h1>
+          <p class="hero__copy">
+            Back-road grit, hard-won truth, and hooks built for the ride home.
+          </p>
+          <div class="hero__actions" aria-label="Featured actions">
+            <a class="button button--primary" href="#music">Listen Now</a>
+            <a class="button button--ghost" data-spotify-link href="#" rel="noopener" target="_blank">
+              Open Spotify
+            </a>
+          </div>
+        </div>
+
+        <section class="quick-player" aria-label="Featured player">
+          <div class="quick-player__art-wrap">
+            <img
+              class="quick-player__art"
+              data-now-cover
+              src="/assets/covers/they-cant-own-this-life.png"
+              alt="They Can't Own This Life cover"
+            />
+          </div>
+          <div class="quick-player__body">
+            <p class="label">Now spinning</p>
+            <h2 data-now-title>They Can't Own This Life</h2>
+            <p data-now-album>Broken Pines single</p>
+            <div class="quick-player__controls">
+              <button class="icon-button" data-action="previous" type="button" title="Previous track" aria-label="Previous track">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h2v12H6zM9 12l9-6v12z"/></svg>
+              </button>
+              <button class="play-button" data-action="toggle" type="button" title="Play" aria-label="Play">
+                <svg data-play-icon viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                <svg data-pause-icon viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+              </button>
+              <button class="icon-button" data-action="next" type="button" title="Next track" aria-label="Next track">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 6h2v12h-2zM6 18l9-6-9-6z"/></svg>
+              </button>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="ticker" aria-label="Broken Pines style line">
+        <div class="ticker__track">
+          <span>Broken Pines</span>
+          <span>Back roads raised me</span>
+          <span>One boot down at a time</span>
+          <span>Country heart</span>
+          <span>Hip-hop soul</span>
+          <span>Broken Pines</span>
+          <span>Back roads raised me</span>
+          <span>One boot down at a time</span>
+          <span>Country heart</span>
+          <span>Hip-hop soul</span>
+        </div>
+      </section>
+
+      <section class="music-section" id="music" aria-labelledby="music-title">
+        <div class="section-heading">
+          <p class="eyebrow">The cuts</p>
+          <h2 id="music-title">Built for midnight drives and morning fights.</h2>
+        </div>
+
+        <div class="player-layout">
+          <div class="stage">
+            <img
+              class="stage__cover"
+              data-stage-cover
+              src="/assets/covers/they-cant-own-this-life.png"
+              alt="They Can't Own This Life cover"
+            />
+            <canvas class="visualizer" data-visualizer width="980" height="260" aria-hidden="true"></canvas>
+            <div class="stage__meta">
+              <p class="label" data-stage-album>Broken Pines single</p>
+              <h3 data-stage-title>They Can't Own This Life</h3>
+            </div>
+          </div>
+
+          <div class="track-panel">
+            <div class="track-panel__topline">
+              <span>Tracklist</span>
+              <a data-spotify-link href="#" rel="noopener" target="_blank">Spotify</a>
+            </div>
+            <div class="track-list" data-track-list></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="releases-section" id="releases" aria-labelledby="releases-title">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="eyebrow">Cover art</p>
+            <h2 id="releases-title">Three worlds, one scarred-up sound.</h2>
+          </div>
+          <a class="button button--outline" data-spotify-link href="#" rel="noopener" target="_blank">Stream the catalog</a>
+        </div>
+
+        <div class="release-grid">
+          <article class="release-card">
+            <img src="/assets/covers/they-cant-own-this-life.png" alt="They Can't Own This Life album cover" />
+            <div>
+              <p>Single</p>
+              <h3>They Can't Own This Life</h3>
+            </div>
+          </article>
+          <article class="release-card">
+            <img src="/assets/covers/losing-my-mind.png" alt="Losing My Mind album cover" />
+            <div>
+              <p>Single</p>
+              <h3>Losing My Mind</h3>
+            </div>
+          </article>
+          <article class="release-card">
+            <img src="/assets/covers/long-road-home.png" alt="Long Road Home album cover" />
+            <div>
+              <p>Single</p>
+              <h3>Long Road Home</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="story-section" id="story" aria-labelledby="story-title">
+        <div class="story-section__image">
+          <img src="/assets/covers/long-road-home.png" alt="Long Road Home cover art detail" />
+        </div>
+        <div class="story-section__copy">
+          <p class="eyebrow">Broken Pines</p>
+          <h2 id="story-title">A rough-road voice with its boots in two worlds.</h2>
+          <p>
+            Broken Pines blends country storytelling, trap drums, and worn-in guitars into songs
+            about pressure, loyalty, loss, and getting home with enough heart left to start again.
+          </p>
+          <div class="story-stats" aria-label="Broken Pines highlights">
+            <div><strong>5</strong><span>Tracks loaded</span></div>
+            <div><strong>3</strong><span>Covers live</span></div>
+            <div><strong>1</strong><span>Road forward</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <span>Broken Pines</span>
+        <p>Country heart. Hip-hop soul.</p>
+      </div>
+      <a data-spotify-link href="#" rel="noopener" target="_blank">Listen on Spotify</a>
+    </footer>
+
+    <audio data-audio preload="metadata"></audio>
+    <div class="dock-player" role="region" aria-label="Audio player">
+      <div class="dock-player__track">
+        <img data-dock-cover src="/assets/covers/they-cant-own-this-life.png" alt="" />
+        <div>
+          <span data-dock-title>They Can't Own This Life</span>
+          <small data-dock-album>Broken Pines single</small>
+        </div>
+      </div>
+      <div class="dock-player__center">
+        <div class="dock-player__controls">
+          <button class="icon-button" data-action="previous" type="button" title="Previous track" aria-label="Previous track">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h2v12H6zM9 12l9-6v12z"/></svg>
+          </button>
+          <button class="play-button play-button--small" data-action="toggle" type="button" title="Play" aria-label="Play">
+            <svg data-play-icon viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            <svg data-pause-icon viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+          </button>
+          <button class="icon-button" data-action="next" type="button" title="Next track" aria-label="Next track">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 6h2v12h-2zM6 18l9-6-9-6z"/></svg>
+          </button>
+        </div>
+        <div class="progress-row">
+          <span data-current-time>0:00</span>
+          <input data-progress type="range" min="0" max="1000" value="0" aria-label="Track progress" />
+          <span data-duration>0:00</span>
+        </div>
+      </div>
+      <label class="volume-control" title="Volume">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2-3.74v7.48a4.5 4.5 0 0 0 2-3.74z"/></svg>
+        <input data-volume type="range" min="0" max="1" step="0.01" value="0.82" aria-label="Volume" />
+      </label>
+    </div>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>

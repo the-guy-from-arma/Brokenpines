@@ -1,0 +1,13 @@
+{
+  "name": "broken-pines-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Official Broken Pines band website with music player, album artwork, Spotify link, and Railway Docker deployment.",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
