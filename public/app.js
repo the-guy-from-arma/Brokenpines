@@ -289,6 +289,4 @@ audio.volume = Number(volume.value);
 renderTrackList();
 updateTrackUi();
 
-if (window.location.hash === "#info") {
-  openInfoModal();
-}
+openInfoModal();
