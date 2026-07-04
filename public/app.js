@@ -1,35 +1,17 @@
-const spotifyUrl = "https://open.spotify.com/search/Broken%20Pines";
+const spotifyUrl = "https://open.spotify.com/artist/0Vp2dk8oPfGzwQmfJeEPKl";
 
 const tracks = [
   {
-    title: "They Can't Own This Life",
-    album: "Broken Pines single",
-    src: "/assets/audio/3-a.mp3",
-    cover: "/assets/covers/they-cant-own-this-life.png"
-  },
-  {
     title: "Long Road Home",
-    album: "Long Road Home",
+    album: "Released single",
     src: "/assets/audio/long-road-home.mp3",
     cover: "/assets/covers/long-road-home.png"
   },
   {
     title: "Losing My Mind",
-    album: "Losing My Mind",
+    album: "Released single",
     src: "/assets/audio/losing-my-mind.mp3",
     cover: "/assets/covers/losing-my-mind.png"
-  },
-  {
-    title: "Mirror Don't Lie",
-    album: "Broken Pines single",
-    src: "/assets/audio/mirror-dont-lie.mp3",
-    cover: "/assets/covers/losing-my-mind.png"
-  },
-  {
-    title: "More Liquor",
-    album: "Broken Pines single",
-    src: "/assets/audio/more-liquor.mp3",
-    cover: "/assets/covers/they-cant-own-this-life.png"
   }
 ];
 
@@ -40,12 +22,11 @@ const volume = document.querySelector("[data-volume]");
 const currentTimeLabel = document.querySelector("[data-current-time]");
 const durationLabel = document.querySelector("[data-duration]");
 const visualizer = document.querySelector("[data-visualizer]");
+const infoModal = document.querySelector("[data-info-modal]");
+const infoOpenButton = document.querySelector("[data-info-open]");
 
 const elements = {
   heroImage: document.querySelector("[data-hero-image]"),
-  nowCover: document.querySelector("[data-now-cover]"),
-  nowTitle: document.querySelector("[data-now-title]"),
-  nowAlbum: document.querySelector("[data-now-album]"),
   stageCover: document.querySelector("[data-stage-cover]"),
   stageTitle: document.querySelector("[data-stage-title]"),
   stageAlbum: document.querySelector("[data-stage-album]"),
@@ -63,6 +44,21 @@ let animationFrame;
 document.querySelectorAll("[data-spotify-link]").forEach((link) => {
   link.href = spotifyUrl;
 });
+
+function openInfoModal() {
+  infoModal.hidden = false;
+  document.body.classList.add("modal-open");
+  infoModal.querySelector("[data-info-close]").focus();
+}
+
+function closeInfoModal() {
+  infoModal.hidden = true;
+  document.body.classList.remove("modal-open");
+  if (window.location.hash === "#info") {
+    history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+  }
+  infoOpenButton.focus();
+}
 
 function formatTime(seconds) {
   if (!Number.isFinite(seconds)) {
@@ -111,10 +107,6 @@ function updateTrackUi() {
   audio.load();
 
   elements.heroImage.src = track.cover;
-  elements.nowCover.src = track.cover;
-  elements.nowCover.alt = `${track.title} cover`;
-  elements.nowTitle.textContent = track.title;
-  elements.nowAlbum.textContent = track.album;
   elements.stageCover.src = track.cover;
   elements.stageCover.alt = `${track.title} cover`;
   elements.stageTitle.textContent = track.title;
@@ -213,6 +205,16 @@ function previousTrack() {
 }
 
 document.addEventListener("click", (event) => {
+  if (event.target.closest("[data-info-open]")) {
+    openInfoModal();
+    return;
+  }
+
+  if (event.target.closest("[data-info-close]")) {
+    closeInfoModal();
+    return;
+  }
+
   const button = event.target.closest("button");
   if (!button) {
     return;
@@ -238,6 +240,18 @@ document.addEventListener("click", (event) => {
 
   if (action === "previous") {
     previousTrack();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !infoModal.hidden) {
+    closeInfoModal();
+  }
+});
+
+window.addEventListener("hashchange", () => {
+  if (window.location.hash === "#info") {
+    openInfoModal();
   }
 });
 
@@ -274,3 +288,7 @@ volume.addEventListener("input", () => {
 audio.volume = Number(volume.value);
 renderTrackList();
 updateTrackUi();
+
+if (window.location.hash === "#info") {
+  openInfoModal();
+}
